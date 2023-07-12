@@ -1,55 +1,58 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./ContactUs.module.css";
-import Background from '../../component/Background/Background'
+import Background from "../../component/Background/Background";
+import axios from "axios";
 
 import ctn from "./gym.jpg";
 
 export default function Contact() {
+  const [input, setInput] = useState({});
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [subject, setSubject] = useState("");
+  const [message, setMessage] = useState("");
 
-  // const [data, setData] = useState({})
-  const [name, setName] = useState("")
-  const [email, setEmail] = useState("")
-  const [subject, setSubject] = useState("")
-  const [message, setMessage] = useState("")
+  function handleFeedback(event) {
+    event.preventDefault();
 
-  // function handleChange(e) {
-  //   setData((data) => ({ ...data, [e.target.name]: e.target.value }))
-  // }
-
+    axios
+      .post("http://localhost:80/feedback/user/save", input)
+      .then(function (response) {
+        console.log(response.data);
+      });
+    console.log(input);
+  }
   function handleSubmit() {
     if (!name || !email || !subject || !message) {
       alert("Please fill all fields");
       return;
-    }
-    if (!validateEmail(email)) {
+    } else if (!validateEmail(email)) {
       alert("Invalid email format");
       return;
     }
 
-    // const users = getUsersData();
-    // users.push({
-    //   userName,
-    //   email,
-    //   password,
-    // });
-    // localStorage.setItem("users", JSON.stringify(users));
-    alert('Thank you for your feedback')
+    setInput({
+      name: name,
+      email: email,
+      subject: subject,
+      message: message,
+    });
+
+    alert("Thank you for your feedback");
     setName("");
     setEmail("");
     setSubject("");
     setMessage("");
-  };
+  }
 
   const validateEmail = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
   };
 
-  // console.log(data);
-
   return (
     <>
-      <Background heading='CONTACT US' imgUrl={ctn} />
+      <Background heading="CONTACT US" imgUrl={ctn} />
 
       <div className={styles.parent}>
         <iframe
@@ -93,14 +96,43 @@ export default function Contact() {
           </div>
           <div className={styles.second_container}>
             <h1>FeedBack</h1>
-
-            <input type="text" placeholder="Your Name" name="name" onChange={(e)=> setName(e.target.value)} value={name} />
-            <input type="email" placeholder="Your E-mail" name="email" onChange={(e)=> setEmail(e.target.value)} value={email}/>
-            <input type="text" placeholder="Subject" name="subject" onChange={(e)=> setSubject(e.target.value)} value={subject}/>
-            <textarea id="" cols="30" rows="10" placeholder="Message" name="message" onChange={(e)=> setMessage(e.target.value)} value={message}/>
-            <div>
-              <button onClick={handleSubmit}>Submit</button>
-            </div>
+            <form onSubmit={handleFeedback} className={styles.second_container}>
+              <input
+                type="text"
+                placeholder="Your Name"
+                name="name"
+                onChange={(e) => setName(e.target.value)}
+                value={name}
+              />
+              <input
+                type="email"
+                placeholder="Your E-mail"
+                name="email"
+                onChange={(e) => setEmail(e.target.value)}
+                value={email}
+              />
+              <input
+                type="text"
+                placeholder="Subject"
+                name="subject"
+                onChange={(e) => setSubject(e.target.value)}
+                value={subject}
+              />
+              <textarea
+                id=""
+                cols="30"
+                rows="10"
+                placeholder="Message"
+                name="message"
+                onChange={(e) => setMessage(e.target.value)}
+                value={message}
+              />
+              <div>
+                <button type="submit" onClick={handleSubmit}>
+                  Submit
+                </button>
+              </div>
+            </form>
           </div>
         </div>
       </div>
