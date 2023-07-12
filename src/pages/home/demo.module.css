@@ -1,0 +1,116 @@
+
+.containerStyles {
+    /* display: flex; */
+    justify-content: center;
+    height: 100vh;
+}
+.transparentBackground {
+    height: 100vh;
+    width: 100%;
+    opacity: 0.3;
+    position: absolute;
+    top: 4.3rem;
+    /* background-image: linear-gradient(to top, rgba(255, 0, 0, 0), rgba(190, 61, 61, 0.808)); */
+
+    background: linear-gradient(to top, white, red);
+  
+}
+
+.bgImage{
+
+}
+
+.description {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: -32rem;
+    align-items: center;
+gap: 2rem;
+    justify-content: center;
+
+    
+}
+
+.description h1 {
+    color: white;
+    width: 65%;
+    font-size: 3.5rem;
+    
+   
+}
+
+.description p {
+}
+
+.carousal {
+    position: absolute;
+    top: 105%;
+    left: 50%;
+    z-index: 10;
+    /* color: red; */
+    background: black;
+}
+
+.carousal span {
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    margin: 1rem;
+    position: relative;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 20;
+    margin-top: -1rem;
+}
+
+
+.des_carousal{
+  
+
+
+}
+@media screen and (max-width:850px) {
+    .containerStyles {
+        
+       height: 70vh;
+        
+    }
+    
+    .description {
+        top: -23rem;
+       
+    }
+
+    .description h1 {
+        font-size: 2.5rem;
+        
+    }
+
+    .carousal { 
+        
+    }
+}
+@media screen and (max-width:640px) {
+
+    .description {
+        top: -25rem;
+       
+    }
+
+    .description h1 {
+        font-size: 2rem;
+        
+    }
+
+    .carousal { 
+        
+    }
+
+.carousal span {
+  
+
+}
+
+
+}

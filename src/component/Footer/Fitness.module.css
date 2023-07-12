@@ -1,0 +1,33 @@
+.fitness {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    margin-top: 1rem;
+  }
+  .fitness li:hover {
+    color: red;
+    cursor: pointer;
+  }
+  
+  @media (max-width: 500px) {
+    .fitness {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      margin-top: 1rem;
+      padding: 0;
+    }
+  
+    .fitness li {
+      text-align: center;
+      margin-bottom: 0.5rem;
+    }
+  
+    .fitness li:hover {
+      background-color: grey;
+      color: red;
+      cursor: pointer;
+    }
+  }

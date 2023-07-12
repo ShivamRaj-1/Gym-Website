@@ -1,0 +1,126 @@
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    z-index: 10;
+    background-color: black;
+    padding: 100px 0;
+}
+
+.mainContainer h1 {
+    /* size: 20rem; */
+    z-index: 0;
+    color: white;
+}
+
+
+.carousal {
+    /* background-color: white; */
+    color: red;
+    min-height: 200px;
+    min-width: 250px;
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 14px 0px rgb(189, 28, 28);
+}
+
+.carousal_div {
+    padding: 40px;
+    /* position: absolute; */
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    /* border: 1px solid rgb(2, 153, 27); */
+    /* width: 800px; */
+    height: 260px;
+    overflow-x: scroll;
+}
+
+.carousal_div::-webkit-scrollbar {
+    display: none;
+}
+
+.imgText {
+    position: relative;
+    font-size: xx-large;
+    top: 40%;
+
+}
+
+.carousal b{
+    z-index: 10;
+}
+
+.carousal img {
+    height: 100%;
+    width: 250px;
+    opacity: 0.6;
+    z-index: 5;
+    margin-top: -43px;
+    /* border: 1px solid black ; */
+    border-radius: 2px;
+}
+
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    color: red;
+}
+
+.buttonContainer span {
+    cursor: pointer;
+}
+
+.icon {
+    cursor: pointer;
+    padding: 5px;
+    height: 30px;
+    width: 30px;
+    border: 1px solid black;
+    border-radius: 50%;
+    background-color: rgb(61, 61, 61);
+
+    /* padding: 10px; */
+}
+
+
+@media screen and (max-width:840px) {
+    .carousal {
+        /* width: 0vw; */
+        display: flex;
+        /* flex-direction: column; */
+        /* justify-content: center; */
+        align-items: center;
+        /* opacity: 0.4; */
+        z-index: 0;
+        /* margin-top: -50px; */
+    }
+
+
+    .carousal_div {
+        height: 250px;
+        display: flex;
+        flex-direction: column;
+        /* justify-content: center; */
+        align-items: center;
+        gap: 50px;
+    }
+
+    .carousal img {
+        /* height: 25rem; */
+        height: 100%;
+
+
+    }
+
+    .buttonContainer {
+        visibility: hidden;
+    }
+}

@@ -1,0 +1,64 @@
+.background img {
+    max-width: 100%;
+    position: relative;
+    background-size: cover;
+    min-width: 100%;
+  }
+  
+  .content {
+    position: absolute;
+    color: white;
+    width: 100%;
+    top: 50%;
+  }
+  .content h1,
+  .content p {
+    text-align: center;
+  }
+  .content h1 {
+    font-size: 4em;
+    font-weight: 400;
+    margin-bottom: 0;
+  }
+  .content p {
+    margin-top: 0;
+    font-size: 1.2em;
+    font-weight: 400;
+  }
+  .btnselect {
+    padding: 10px 30px;
+    color: white;
+    background-color: red;
+    border-radius: 20px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    margin-top: 15px;
+  }
+  
+  .btnselect:hover {
+    color: green;
+  }
+  
+  /* ++++++++++ Responsive +++++++++++ */
+  
+  /* ============ Phone ============= */
+  
+  @media (max-width: 500px) {
+    .content {
+      top: 16%;
+    }
+    .content h1 {
+      font-size: 25px;
+    }
+    .content p {
+      font-size: 12px;
+    }
+  }
+  
+  /* ============ Tablet ============= */
+  @media (max-width: 900px) {
+    .content {
+      top: 18%;
+    }
+  }

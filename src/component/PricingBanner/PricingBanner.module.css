@@ -1,0 +1,88 @@
+.pbanner_background{
+    width: 100%;
+    background-color: rgb(4, 7, 65);
+}
+
+.pbanner_container{
+    width: 75%;
+    margin: auto;
+    padding: 100px 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.pbanner_container h1{
+    width: 50%;
+    font-size: 50px;
+    color: white;
+}
+
+.pbanner_container button{
+    width: 20%;
+    padding: 20px 0;
+    font-weight: 600;
+}
+
+
+
+/* ============= RESPONSIVE ============= */
+
+/* Extra small devices (phones, 500px and down) */
+@media only screen and (max-width: 500px) {
+    .pbanner_container{
+        width: 90%;
+    }
+    .pbanner_container h1{
+        width: 100%;
+        font-size: 32px;
+    }
+    .pbanner_container button{
+        width: auto;
+        padding: 12px 30px ;
+    }
+}
+
+
+/* Small devices (portrait tablets and large phones, 500px and up) */
+@media only screen and (min-width: 500px) {
+    .pbanner_container{
+        width: 90%;
+        padding: 150px 0;
+    }
+    .pbanner_container h1{
+        width: 50%;
+        font-size: 38px;
+    }
+    .pbanner_container button{
+        width: auto;
+        padding: 15px 30px ;
+    }
+}
+
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .pbanner_container{
+        padding: 120px 0;
+    }
+    .pbanner_container h1{
+        width: 50%;
+        font-size: 42px;
+    }
+}
+
+
+/* Large devices (laptops/desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .pbanner_container{
+        padding: 100px 0;
+    }
+    .pbanner_container h1{
+        width: 50%;
+        font-size: 50px;
+    }
+    
+}

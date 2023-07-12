@@ -1,0 +1,295 @@
+.pricing_mainBackground{
+    width: 100%;
+    /* height: 100vh; */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: black;
+}
+
+.pricing_container{
+    width: 70%;
+    height: 80%;
+    /* border: 2px solid red; */
+
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.pricing_container > div{
+    width: 48%;
+}
+
+.pass_part{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.pass_box{
+    width: 48%;
+    height: 80%;
+    /* border: 2px solid green; */
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative;
+}
+/* .pass_box:hover{
+    height: 100%;
+} */
+.pass_box > div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.pass_box > div p{
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+.pass_box > div h1{
+    font-weight: 400;
+    font-size: 42px;
+    color: green;
+}
+.pass_box > div span{
+    font-style: italic ;
+    font-size: 14px;
+}
+.pass_box > p{
+    margin: 5px 0;
+}
+.pass_box > button {
+    position: absolute;
+    bottom: 20px;
+    width: 85%;
+
+    padding: 10px 0;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.left_box{
+    background-color: rgb(24, 24, 24);
+}
+.left_box > div span{
+    color: white;
+}
+.left_box p{
+    color: white;
+}
+
+.right_box{
+    height: 100%;
+    background-color: white;
+}
+.right_box button{
+    background-color: green;
+    color: white;
+}
+
+.content_part{
+    margin-bottom: 20px;
+}
+.content_part h4{
+    color: gray;
+    font-weight: 500;
+}
+.content_part > h4 span{
+    border-bottom: 2px solid green;
+}
+.content_part h2,
+.content_part h3{
+    margin: 20px 0;
+    font-weight: 500;
+    color: white;
+}
+.content_part p{
+    color: gray;
+}
+.content_part > ul > li{
+    list-style: none;
+    margin: 5px 0;
+    color: gray;
+}
+.content_part > ul span{
+    color: green;
+    font-size: 16px;
+}
+
+
+.pricing_feature_section{
+    width: 100%;
+    padding: 100px 0;
+    background-color: black;
+}
+
+.pricing_feature_heading{
+    text-align: center;
+    margin-bottom: 40px;
+}
+.pricing_feature_heading h4{
+    color: red;
+    font-weight: 700;
+}
+.pricing_feature_heading h1{
+    font-size: 40px;
+    width: 50%;
+    margin: auto;
+    color: white;
+}
+
+.Pfeature_container{
+    display: flex;
+    justify-content: center;
+}
+
+
+
+/* ============= RESPONSIVE ============= */
+
+@media only screen and (max-width: 400px) {
+    .pass_part{
+        min-height: 60vh;
+    }
+}
+
+/* Extra small devices (phones, 500px and down) */
+@media only screen and (max-width: 500px) {
+    .pricing_mainBackground{
+        padding: 50px 0;
+        min-height: 101vh;
+    }
+    .pricing_container{
+        width: 90%;
+        flex-wrap: wrap;
+    }
+    .pricing_container > div{
+        width: 100%;
+    }
+    
+    .pass_part{
+        height: 50vh;
+        margin-bottom: 20px;
+    }
+    .pass_part > div{
+        padding: 10px;
+    }
+    .pass_part > div > button{
+        margin: 0;
+        font-size: 13px;
+        position: static;
+        margin-top: 40px;
+        width: 100%;
+    }
+
+    
+    .pricing_feature_heading{
+        width: 90%;
+        margin: auto;
+    }
+    .pricing_feature_heading h1{
+        font-size: 28px;
+        width: 90%;
+    }
+    .Pfeature_container{
+        width: 100%;
+    }
+}
+
+
+/* Small devices (portrait tablets and large phones, 500px and up) */
+@media only screen and (min-width: 500px) {
+    .pricing_mainBackground{
+        padding: 50px 0;
+    }
+    .pricing_container{
+        width: 90%;
+        flex-wrap: wrap;
+    }
+    .pricing_container > div{
+        width: 100%;
+    }
+    
+    .pass_part{
+        height: 50vh;
+        margin-bottom: 20px;
+    }
+    .pass_part > div{
+        padding: 10px;
+    }
+    .pass_part > div > button{
+        margin: 0;
+        font-size: 13px;
+    }
+    
+    .pricing_feature_heading{
+        width: 90%;
+        margin: auto;
+    }
+    .pricing_feature_heading h1{
+        font-size: 30px;
+        width: 90%;
+    }
+    .Pfeature_container{
+        width: 100%;
+    }
+}
+
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .pricing_mainBackground{
+        padding: 0;
+        height: 75vh;
+    }
+    .pricing_container{
+        width: 92%;
+    }
+    .pass_box > button {
+        width: 75%;
+    }
+    .pricing_container > div{
+        width: 48%;
+    }
+    .pass_part > div{
+        padding: 20px;
+    }
+
+    .pricing_feature_heading{
+        width: 80%;
+        margin-bottom: 20px;
+    }
+    .pricing_feature_heading h1{
+        font-size: 32px;
+        width: 90%;
+    }
+}
+
+
+/* Large devices (laptops/desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .pricing_mainBackground{
+        padding: 100px 0;
+        /* height: 100vh; */
+    }
+    .pricing_container{
+        width: 80%;
+        flex-wrap: wrap;
+    }
+    .pass_box > button {
+        width: 85%;
+    }
+
+    .pricing_feature_heading{
+        width: 80%;
+        margin-bottom: 40px;
+    }
+    .pricing_feature_heading h1{
+        font-size: 36px;
+        width: 80%;
+    }
+}
