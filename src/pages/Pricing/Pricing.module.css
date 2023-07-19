@@ -172,7 +172,7 @@
     }
     
     .pass_part{
-        height: 50vh;
+        height: 60vh;
         margin-bottom: 20px;
     }
     .pass_part > div{
@@ -215,7 +215,7 @@
     }
     
     .pass_part{
-        height: 50vh;
+        max-height: 60vh;
         margin-bottom: 20px;
     }
     .pass_part > div{
