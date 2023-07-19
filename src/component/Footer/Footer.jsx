@@ -19,68 +19,54 @@ export default function Footer() {
           <h1>Fitness Trainer</h1>
           <hr></hr>
           <h4>Best Fitness club</h4>
-
           <div className={Styles.content}>
             <p>Lorem ipsum dolor sit amet</p>
             <p>consectetuer adipiscing elit</p>
           </div>
-
           <div className={Styles.footer_box_social}>
             <div className={Styles.footer_social}>
               <li>
-
                 <a
                   href="https://www.facebook.com/"
                   rel="noreferrer noopener"
                   target="_blank"
-                    >
+                >
                   <TiSocialFacebook />
                 </a>
               </li>
               <li>
-
                 <a
                   href="https://www.linkedIn.com"
                   rel="noreferrer noopener"
                   target="_blank"
                 >
-
                   <TiSocialLinkedin />
                 </a>
               </li>
-
               <li>
-
                 <a
                   href="https://www.twitter.com"
                   rel="noreferrer noopener"
                   target="_blank"
                 >
-
                   <TiSocialTwitter />
                 </a>
               </li>
-
               <li>
-
                 <a
                   href="https://www.youtube.com"
                   rel="noreferrer noopener"
                   target="_blank"
                 >
-
                   <TiSocialYoutube />
                 </a>
               </li>
-
               <li>
-
                 <a
                   href="https://www.instagram.com"
                   rel="noreferrer noopener"
                   target="_blank"
                 >
-
                   <TiSocialInstagram />
                 </a>
               </li>

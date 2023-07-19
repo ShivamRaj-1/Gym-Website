@@ -9,17 +9,12 @@
 .Testimonials_main_background h4{
     color: red;
 }
-
 .testimonials_container{
     width: 70%;
     margin: auto;
     margin-top: 30px;
     position: relative;
-    /* transform: translate3d(-2280px, 0px, 0px);
-    transition: all 1.2s ease 0s; */
-
 }
-
 .arrow_left{
     position: absolute;
     left: 0;
@@ -38,7 +33,6 @@
     background-color: rgba(128, 128, 128, 0.509);
     cursor: pointer;
 }
-
 .Testimonials_box{
     width: 80%;
     margin: auto;

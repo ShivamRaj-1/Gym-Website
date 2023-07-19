@@ -1,6 +1,5 @@
 import React from 'react'
 import TS from './Trainer.module.css'
-// import TrainerMain from '../../component/TrainerMain/TrainerMain'
 import Background from '../../component/Background/Background'
 import { Trainer_details } from '../../utils/Trainer_details'
 import TrainerBanner from '../../component/TrainerBanner/TrainerBanner';
@@ -30,17 +29,12 @@ export default function Trainer() {
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, vel?',
     },
   ]
-
-
   return (
     <div className={TS.trainer_mainBackground}>
       <Background heading='OUR COACH' imgUrl={img} />
-
-      
       <section className={TS.coach_section}>
         <h3>OUR TEAM</h3>
         <h1>TRAIN WITH EXPERTS</h1>
-
         <div className={TS.coach_div}>
           {
             Trainer_details.map((elem, index) => {
@@ -63,15 +57,11 @@ export default function Trainer() {
             })
           }
         </div>
-
       </section>
-
       <TrainerBanner h1={'A BIG OFFER FOR'} h2={'THIS SUMMER'} url={'https://preview.colorlib.com/theme/gym2/img/banner/big_offer.png.webp'} />
-
       <section className={TS.features_section}>
         <h1>PUSH YOUR LIMITS</h1>
         <p>Our trainers will help you to master all the different workouts and exercises, and push your limits. </p>
-
         <div className={TS.feature_container}>
           {
             trainer_card.map((elem, index) => {
@@ -86,7 +76,6 @@ export default function Trainer() {
           }
         </div>
       </section>
-
     </div>
   )
 }

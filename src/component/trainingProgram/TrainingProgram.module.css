@@ -10,18 +10,14 @@
 }
 
 .mainContainer h1 {
-    /* size: 20rem; */
     z-index: 0;
     color: white;
 }
 
-
 .carousal {
-    /* background-color: white; */
     color: red;
     min-height: 200px;
     min-width: 250px;
-    /* border: 1px solid black; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -31,12 +27,9 @@
 
 .carousal_div {
     padding: 40px;
-    /* position: absolute; */
     display: flex;
     flex-direction: row;
     gap: 30px;
-    /* border: 1px solid rgb(2, 153, 27); */
-    /* width: 800px; */
     height: 260px;
     overflow-x: scroll;
 }
@@ -49,10 +42,9 @@
     position: relative;
     font-size: xx-large;
     top: 40%;
-
 }
 
-.carousal b{
+.carousal b {
     z-index: 10;
 }
 
@@ -62,7 +54,6 @@
     opacity: 0.6;
     z-index: 5;
     margin-top: -43px;
-    /* border: 1px solid black ; */
     border-radius: 2px;
 }
 
@@ -86,38 +77,25 @@
     border: 1px solid black;
     border-radius: 50%;
     background-color: rgb(61, 61, 61);
-
-    /* padding: 10px; */
 }
-
 
 @media screen and (max-width:840px) {
     .carousal {
-        /* width: 0vw; */
         display: flex;
-        /* flex-direction: column; */
-        /* justify-content: center; */
         align-items: center;
-        /* opacity: 0.4; */
         z-index: 0;
-        /* margin-top: -50px; */
     }
-
 
     .carousal_div {
         height: 250px;
         display: flex;
         flex-direction: column;
-        /* justify-content: center; */
         align-items: center;
         gap: 50px;
     }
 
     .carousal img {
-        /* height: 25rem; */
         height: 100%;
-
-
     }
 
     .buttonContainer {

@@ -3,19 +3,15 @@ import { MdMenu } from "react-icons/md";
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom'
 import Btn from '../button/Button'
-
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import Popover from '@mui/material/Popover';
 import PopupState, { bindTrigger, bindPopover } from 'material-ui-popup-state';
-
 import styles from './Navbar.module.css'
-
 import logo from './logo.png';
 
 export default function Navbar() {
   const [menu, setMenu] = useState(false)
-
   const navigate = useNavigate()
 
   function handleClick() {
@@ -36,7 +32,6 @@ export default function Navbar() {
           <img className={styles.logo} src={logo} alt="logo" />
         </div>
       </Link>
-
       <div>
         <ul className={styles.listItems}>
           <li><Link to={'/'} className={styles.link}>Home</Link></li>
@@ -44,11 +39,9 @@ export default function Navbar() {
           <li><Link to={'/trainer'} className={styles.link}>Trainers</Link></li>
           <li><Link to={'/pricing'} className={styles.link}>Pricing</Link></li>
           <li><Link to={'/contact'} className={styles.link}>Contact Us</Link></li>
-
           {
             !currentUser ?
               <Link to={'/signin'}><Btn name='Join Us' /></Link> :
-
               <PopupState variant="popover" popupId="demo-popup-popover">
                 {(popupState) => (
                   <div>
@@ -75,9 +68,7 @@ export default function Navbar() {
                 )}
               </PopupState>
           }
-
         </ul>
-
         <div className={styles.menuContainer}>
           <MdMenu style={{ fontSize: 40 }} className={styles.menu} onClick={() => handleClick()} />
           {

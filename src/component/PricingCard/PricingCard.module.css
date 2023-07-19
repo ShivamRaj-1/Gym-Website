@@ -3,41 +3,32 @@
     display: flex;
     justify-content: space-between;
 }
-
 .pricing_card_main div:nth-child(1),
 .pricing_card_main div:nth-child(2) {
     border-right: 2px dashed gray;
 }
-
 .pricing_card_box {
     width: 33.3%;
-
     display: flex;
     flex-direction: column;
     align-items: center;
-
     padding: 30px 30px;
 }
-
 .pricing_card_box img {
     height: 100px;
     width: 100px;
 }
-
 .pricing_card_box h2 {
     width: 70%;
     text-align: center;
     margin: 20px;
     color: white;
 }
-
 .pricing_card_box p {
     width: 90%;
     text-align: center;
     color: gray;
 }
-
-
 
 /* ============= RESPONSIVE ============= */
 
@@ -47,11 +38,9 @@
         width: 100%;
         flex-wrap: wrap;
     }
-
     .pricing_card_box {
         width: 100%;
     }
-
     .pricing_card_main div:nth-child(1),
     .pricing_card_main div:nth-child(2) {
         border-right: 0px ;
@@ -65,11 +54,9 @@
         width: 100%;
         flex-wrap: wrap;
     }
-
     .pricing_card_box {
         width: 100%;
     }
-
     .pricing_card_main div:nth-child(1),
     .pricing_card_main div:nth-child(2) {
         border-right: 0px ;
@@ -83,11 +70,9 @@
         width: 100%;
         flex-wrap: nowrap;
     }
-
     .pricing_card_box {
         width: 33.3%;
     }
-
     .pricing_card_main div:nth-child(1),
     .pricing_card_main div:nth-child(2) {
         border-right: 2px dashed gray ;
@@ -100,5 +85,4 @@
     .pricing_card_main {
         width: 80%;
     }
-
 }

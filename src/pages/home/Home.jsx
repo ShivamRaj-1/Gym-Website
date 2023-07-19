@@ -1,8 +1,6 @@
 
 import React, { Fragment, useEffect,useState } from "react";
-// import style from "./Home.module.css";
 import style from "./demo.module.css";
-
 import Button from "../../component/button/Button";
 import TrainingProgram from "../../component/trainingProgram/TrainingProgram";
 import { slideData } from "../../utils/HomePageSliderData.js";
@@ -10,11 +8,7 @@ import TrainerMain from '../../component/TrainerMain/TrainerMain'
 import TrainerBanner from '../../component/TrainerBanner/TrainerBanner'
 import { useNavigate } from "react-router";
 
-
-
 export default function Home() {
-
-
   return (
     <Fragment>
       <div>
@@ -59,14 +53,12 @@ export function ImageSlider() {
     <div className={style.containerStyles}>
       <div style={bgImageStyle}></div>
       <div className={style.des_carousal}>
-
         <div className={style.description}>
           <h1 style={{color: 'rgb(68, 20, 38)'}} >{slideData[currentSlideIndex].text}</h1>
           <Button name='Join With Us'
             onClick={pageToJoin}
           />
         </div>
-        
       </div>
     </div>
   );

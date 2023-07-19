@@ -1,5 +1,3 @@
-
-
 export const Trainer_details = [
     {
         id: 1,
