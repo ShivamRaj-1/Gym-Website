@@ -5,7 +5,6 @@ import { Trainer_details } from '../../utils/Trainer_details'
 export default function TrainerCard() { 
     return (
         <div className={TCS.card_main}>
-
             {
                 Trainer_details.filter((elem, i)=> i<4).map((elem, i) => {
                     return (
@@ -19,14 +18,11 @@ export default function TrainerCard() {
                                     backgroundPosition: 'center',
                                 }}
                             >
-
                             </div>
-
                             <div className={TCS.box_content}>
                                 <h3>{elem.name}</h3>
                                 <p>{elem.coach}</p>
                             </div>
-
                         </div>
                     )
                 })

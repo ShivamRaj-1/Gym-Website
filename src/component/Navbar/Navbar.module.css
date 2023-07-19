@@ -1,5 +1,4 @@
-nav{
-    
+nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -9,63 +8,52 @@ nav{
     z-index: 999;
     padding: 1rem 2.5rem;
 }
-
-.listItems{
+.listItems {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
 }
-
 .Logo {
     text-decoration: none;
-    /* font-size: 4rem; */
-    /* background: -webkit-linear-gradient(#eee, #333); */
-    /* -webkit-background-clip: text; */
-    /* background-clip: text ; */
-    /* -webkit-text-fill-color: transparent; */
 }
-
-nav ul{
+nav ul {
     display: flex;
     list-style: none;
 }
-.link{
+.link {
     text-decoration: none;
     color: white;
     margin: 0 1.6rem;
     font-weight: 600;
     font-size: 1.2rem;
 }
-
-.link:hover{
-color: red;
+.link:hover {
+    color: red;
 }
-
-.menu{
+.menu {
     display: none;
 }
-.hiddenMenu{
+.hiddenMenu {
     display: none;
 }
 
-@media only screen and (max-width: 500px){
-    .navBar{
+@media only screen and (max-width: 500px) {
+    .navBar {
         justify-content: space-between;
     }
-    .menu{
+    .menu {
         display: unset;
         color: white;
     }
-    .listItems{
+    .listItems {
         display: none;
     }
-    .menuContainer{
+    .menuContainer {
         display: flex;
         flex-direction: column;
-        /* justify-content: center; */
         align-items: center;
     }
-    .hiddenMenu{
+    .hiddenMenu {
         width: 40%;
         display: unset;
         display: flex;
@@ -79,33 +67,32 @@ color: red;
         background: linear-gradient(180deg, rgb(32, 32, 32), rgb(95, 94, 94));
         height: 100vh;
     }
-    .hiddenMenu li{
+    .hiddenMenu li {
         padding-bottom: 20px;
         font-size: 18px;
     }
-    .hiddenMenu a{
+    .hiddenMenu a {
         margin: 0;
     }
 }
 
-@media only screen and (500px < width < 900px){
-    .navBar{
+@media only screen and (500px < width < 900px) {
+    .navBar {
         justify-content: space-between;
     }
-    .menu{
+    .menu {
         display: unset;
         color: white;
     }
-    .listItems{
+    .listItems {
         display: none;
     }
-    .menuContainer{
+    .menuContainer {
         display: flex;
         flex-direction: column;
-        /* justify-content: center; */
         align-items: center;
     }
-    .hiddenMenu{
+    .hiddenMenu {
         width: 40%;
         display: unset;
         display: flex;
@@ -115,15 +102,15 @@ color: red;
         position: absolute;
         top: 77px;
         right: 0rem;
-        padding: 2rem 2rem ;
+        padding: 2rem 2rem;
         background: linear-gradient(180deg, rgb(32, 32, 32), rgb(95, 94, 94));
         height: 100vh;
     }
-    .hiddenMenu li{
+    .hiddenMenu li {
         padding-bottom: 26px;
         font-size: 22px;
     }
-    .hiddenMenu a{
+    .hiddenMenu a {
         margin: 0;
     }
 }

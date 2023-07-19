@@ -2,7 +2,6 @@
     width: 100%;
     background-color: rgb(4, 7, 65);
 }
-
 .pbanner_container{
     width: 75%;
     margin: auto;
@@ -13,20 +12,16 @@
     align-items: center;
     flex-wrap: wrap;
 }
-
 .pbanner_container h1{
     width: 50%;
     font-size: 50px;
     color: white;
 }
-
 .pbanner_container button{
     width: 20%;
     padding: 20px 0;
     font-weight: 600;
 }
-
-
 
 /* ============= RESPONSIVE ============= */
 

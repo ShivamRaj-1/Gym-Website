@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import styles from "./ContactUs.module.css";
 import Background from "../../component/Background/Background";
 import axios from "axios";
-
 import ctn from "./gym.jpg";
 
 export default function Contact() {
@@ -14,14 +13,13 @@ export default function Contact() {
 
   function handleFeedback(event) {
     event.preventDefault();
-
     axios
       .post("http://localhost:80/feedback/user/save", input)
       .then(function (response) {
         console.log(response.data);
       });
-    console.log(input);
   }
+
   function handleSubmit() {
     if (!name || !email || !subject || !message) {
       alert("Please fill all fields");
@@ -53,7 +51,6 @@ export default function Contact() {
   return (
     <>
       <Background heading="CONTACT US" imgUrl={ctn} />
-
       <div className={styles.parent}>
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3751.8642819412785!2d75.35153377406608!3d19.887951925983756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bdba3d15bc6652f%3A0xb44413a328dcb453!2sFitness%20Trainer!5e0!3m2!1sen!2sin!4v1681972558184!5m2!1sen!2sin"

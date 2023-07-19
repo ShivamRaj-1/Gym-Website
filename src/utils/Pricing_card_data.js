@@ -1,4 +1,3 @@
-
 export const pricingCardData = [
     {
         img: 'https://preview.colorlib.com/theme/dazko/images/svg/001-fitness.svg',

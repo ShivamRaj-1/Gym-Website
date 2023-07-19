@@ -3,12 +3,10 @@
     background-color: black;
     padding-bottom: 30px;
 }
-
 .trainer_container{
     width: 80%;
     margin: auto;
 }
-
 .heading_part{
     display: flex;
     flex-direction: column;
@@ -28,13 +26,10 @@
     width: 70%;
     color: gray;
 }
-
 .card_container{
     margin: 50px 0;
     width: 100%;
-    /* display: flex; */
 }
-
 .button_part{
     display: flex;
     justify-content: center;
@@ -49,10 +44,7 @@
 }
 .button_part button:hover{
     cursor: pointer;
-
 }
-
-
 
 /* ============= RESPONSIVE ============= */
 
@@ -71,7 +63,6 @@
         font-size: 14px;
         width: 80%;
     }
-
     .card_container{
         margin-bottom: 15px;
     }

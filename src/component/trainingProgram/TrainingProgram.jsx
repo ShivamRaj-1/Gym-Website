@@ -1,5 +1,4 @@
-import React, { Fragment, useState } from "react";
-import "../../App.css";
+import React, { useState } from "react";
 import styles from "./TrainingProgram.module.css";
 import { MdArrowForwardIos, MdArrowBackIosNew } from "react-icons/md";
 import { TrainingProgram_data } from '../../utils/TrainingProgram_data';
@@ -14,10 +13,9 @@ export default function TrainingProgram() {
   const handleSlideChangeRight = () => {
     setCurrentIndex(currentIndex === TrainingProgram_data.length - 3 ? 0 : currentIndex + 1);
   };
-  // console.log(currentIndex);
 
   return (
-    <Fragment>
+    <>
       <div className={styles.mainContainer}>
         <h1>Training Program</h1>
         <div className={styles.carousal_div}>
@@ -27,7 +25,6 @@ export default function TrainingProgram() {
                 <div
                   key={index}
                   className={styles.carousal}
-                //   style={{ backgroundImage: `url(${ele.img}) center cover` }}
                 >
                   <b className={styles.imgText}>{ele.text}</b>
                   <img src={ele.img} alt={`Slide${index}`} />
@@ -40,7 +37,6 @@ export default function TrainingProgram() {
                 <div
                   key={index}
                   className={styles.carousal}
-                //   style={{ backgroundImage: `url(${ele.img}) center cover` }}
                 >
                   <b className={styles.imgText}>{ele.text}</b>
                   <img src={ele.img} alt={`Slide${index}`} />
@@ -52,17 +48,12 @@ export default function TrainingProgram() {
         <div className={styles.buttonContainer}>
           <MdArrowBackIosNew className={styles.icon}
             onClick={handleSlideChangeLeft}
-
           />
-
-
           <MdArrowForwardIos className={styles.icon}
             onClick={handleSlideChangeRight}
-
           />
-
         </div>
       </div>
-    </Fragment>
+    </>
   );
 }

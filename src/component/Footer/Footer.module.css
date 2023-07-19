@@ -10,13 +10,11 @@
   margin: 0px;
   display: flex;
   justify-content: space-between;
-  gap: 3 rem;
-  /* background-color: rgb(0, 0, 0); */
+  gap: 3rem;
   background: linear-gradient(90deg, rgb(32, 32, 3), rgb(95, 94, 94));
   color: white;
   box-shadow: 2px 1px 3px 1px;
   padding: 1rem 1rem;
-  /* margin-top: 5rem; */
 }
 .footer_social {
   display: flex;
@@ -59,12 +57,10 @@
     flex-direction: column;
     height: 30rem;
   }
-
   .footer_social {
     margin-top: 0.5rem;
     justify-content: center;
   }
-
   .content {
     margin-left: 0;
     text-align: center;

@@ -14,7 +14,7 @@ export default function About() {
       <div className={styles.transparentBackground}></div>
       <Background heading='ABOUT US' imgUrl={img} />
       <div className={styles.container}>
-        <section className={styles.about}> 
+        <section className={styles.about}>
           <iframe
             src="https://www.youtube.com/embed/vei81-bZhG4"
             title="YouTube video player"
@@ -68,11 +68,8 @@ export default function About() {
             </ul>
           </div>
         </section>
-
-        <div></div>
       </div>
-
-      <Testimonials/>
+      <Testimonials />
     </>
 
   );
