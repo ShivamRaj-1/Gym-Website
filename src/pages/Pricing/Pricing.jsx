@@ -8,7 +8,7 @@ export default function Pricing() {
   const img = 'https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1';
 
   return (
-    <>
+    <> 
       <Background heading='OUR PRICING' imgUrl={img} />
       <section className={PS.pricing_mainBackground}>
         <div className={PS.pricing_container}>
