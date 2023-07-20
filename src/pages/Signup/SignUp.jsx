@@ -1,19 +1,20 @@
 import React, { useState } from "react";
-import signUp from './Signup.module.css'
-import { Link } from "react-router-dom";
+import signUp from "./Signup.module.css";
+import { Link,useNavigate } from "react-router-dom";
+import axios from "axios";
 
 export default function SignUpPage() {
+  const navigate = useNavigate()
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [userName, setUserName] = useState("");
+  const [name, setName] = useState("");
   const [error, setError] = useState("");
 
   const getUsersData = () => {
-    const users =localStorage.getItem("users");
+    const users = localStorage.getItem("users");
     try {
       if (users) {
-       
-        return JSON.parse(users); 
+        return JSON.parse(users);
       }
     } catch (error) {
       return [];
@@ -23,7 +24,19 @@ export default function SignUpPage() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (!userName || !email || !password) {
+
+    const input = {
+      name: name,
+      email: email,
+      password: password,
+    };
+    axios
+      .post("http://localhost:80/newuser/user/save", input)
+      .then(function (response) {
+        console.log(response.data);
+      });
+
+    if (!name || !email || !password) {
       setError("Please fill all fields");
       return;
     }
@@ -37,20 +50,21 @@ export default function SignUpPage() {
     }
     const users = getUsersData();
     users.push({
-      userName,
+      name,
       email,
       password,
     });
+
     localStorage.setItem("users", JSON.stringify(users));
-    alert('sign up done successfully')
+    alert("sign up done successfully");
     setError("");
-    setUserName("");
+    setName("");
     setEmail("");
     setPassword("");
+    navigate("/signin");
   };
 
   const validateEmail = (email) => {
-
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
   };
@@ -60,28 +74,31 @@ export default function SignUpPage() {
       <div className={signUp.form}>
         <form onSubmit={handleSubmit}>
           <div className={signUp.inputDiv}>
-            <p>UserName :</p>
+            <p>name :</p>
             <input
               type="text"
-              placeholder="Enter your username"
-              value={userName}
-              onChange={(e)=>setUserName(e.target.value)}
+              placeholder="Enter your name"
+              value={name}
+              name="name"
+              onChange={(e) => setName(e.target.value)}
             />
             <br />
             <p>Email:</p>
             <input
               type="email"
+              name="email"
               placeholder="Enter your email"
               value={email}
-              onChange={(e)=>setEmail(e.target.value)}
+              onChange={(e) => setEmail(e.target.value)}
             />
             <br />
             <p>Password:</p>
             <input
               type="password"
+              name="password"
               placeholder="Enter your password"
               value={password}
-              onChange={(e)=>setPassword(e.target.value)}
+              onChange={(e) => setPassword(e.target.value)}
             />
             <br />
           </div>
@@ -90,9 +107,13 @@ export default function SignUpPage() {
           <div className={signUp.buttonDiv}>
             <p className={signUp.registerLink}>
               Already have an account.
-              <Link to="/signin" className={signUp.link}>SignIn</Link>
+              <Link to="/signin" className={signUp.link}>
+                SignIn
+              </Link>
             </p>
-            <button type='submit' className={signUp.button}>SignUp</button>
+            <button type="submit" className={signUp.button}>
+              SignUp
+            </button>
           </div>
         </form>
       </div>

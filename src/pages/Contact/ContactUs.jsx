@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState} from "react";
 import styles from "./ContactUs.module.css";
 import Background from "../../component/Background/Background";
 import axios from "axios";
