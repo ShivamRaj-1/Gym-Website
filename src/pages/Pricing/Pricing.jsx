@@ -7,6 +7,14 @@ import PricingCard from '../../component/PricingCard/PricingCard';
 export default function Pricing() {
   const img = 'https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1';
 
+  function handleClick(pass){
+
+    if(confirm(`Are you sure you want to get ${pass} ?`)){
+      
+    }
+
+  }
+
   return (
     <> 
       <Background heading='OUR PRICING' imgUrl={img} />
@@ -15,27 +23,28 @@ export default function Pricing() {
           <div className={PS.pass_part}>
             <div className={`${PS.pass_box} ${PS.left_box}`}>
               <div>
-                <p>Day Pass</p>
-                <h1>$20</h1>
+                <p>Month Pass</p>
+                <h1>₹1000</h1>
                 <span>/pass</span>
               </div>
-              <p>-- 1 Day Pass</p>
+              <p>-- ₹500 Joining Fee</p>
+              <p>-- 1 Month Pass</p>
               <p>-- Free Gym Access</p>
               <p>-- 24 Hour Access</p>
-              <button>GET STARTED</button>
+              <button onClick={()=> handleClick("1 Month Pass")}>GET STARTED</button>
             </div>
             <div className={`${PS.pass_box} ${PS.right_box}`}>
               <div>
-                <p>Month to Month</p>
-                <h1>$90</h1>
-                <span>/month</span>
+                <p>3 Months Pass</p>
+                <h1>₹2500</h1>
+                <span>/Pass</span>
               </div>
-              <p>-- $99 Joining Fee</p>
+              <p>-- ₹0 Joining Fee</p>
               <p>-- No Contract</p>
               <p>-- Free Gym Access</p>
               <p>-- 1 Group Class Included</p>
               <p>-- 24 Hour Access</p>
-              <button>GET STARTED</button>
+              <button onClick={()=> handleClick("3 Month Pass")}>GET STARTED</button>
             </div>
           </div>
           <div className={PS.content_part}>

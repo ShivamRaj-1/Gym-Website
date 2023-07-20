@@ -12,8 +12,6 @@ export default function SignIn() {
   const nav = useNavigate();
 
   useEffect(() => {
-    // const data = JSON.parse(localStorage.getItem("users")) || [];
-    // setUserList(data);
     axios
       .get("http://localhost:80/newuser/user/save")
       .then(function (response) {
