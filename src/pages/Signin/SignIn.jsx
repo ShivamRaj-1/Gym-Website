@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import styles from './Signin.module.css';
+import styles from "./Signin.module.css";
 import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 export default function SignIn() {
   const [userList, setUserList] = useState([]);
@@ -11,8 +12,17 @@ export default function SignIn() {
   const nav = useNavigate();
 
   useEffect(() => {
-    const data = JSON.parse(localStorage.getItem("users")) || [];
-    setUserList(data);
+    // const data = JSON.parse(localStorage.getItem("users")) || [];
+    // setUserList(data);
+    axios
+      .get("http://localhost:80/newuser/user/save")
+      .then(function (response) {
+        console.log(response.data);
+        setUserList(response.data);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   }, []);
 
   useEffect(() => {
