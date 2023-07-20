@@ -46,7 +46,7 @@ export function ImageSlider() {
   };
 
   const pageToJoin = () => {
-    navigate('./signin')
+    navigate('/signin')
   }
 
   return (
