@@ -10,7 +10,7 @@ import PopupState, { bindTrigger, bindPopover } from "material-ui-popup-state";
 import styles from "./Navbar.module.css";
 import logo from "./logo.png";
 
-export default function Navbar() {
+export default function Navbar({ subscriptionType }) {
   const [menu, setMenu] = useState(false);
   const navigate = useNavigate();
 
@@ -82,7 +82,7 @@ export default function Navbar() {
                     }}
                   >
                     <Typography sx={{ p: 2 }}>Profile</Typography>
-                    <Typography sx={{ p: 2 }}>Subscription</Typography>
+                    <Typography sx={{ p: 2 }}>{subscriptionType}</Typography>
                     <hr />
                     <Typography sx={{ p: 2 }} onClick={handleLogout}>
                       Logout

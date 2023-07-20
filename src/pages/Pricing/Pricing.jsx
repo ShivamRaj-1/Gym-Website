@@ -4,13 +4,13 @@ import Background from '../../component/Background/Background'
 import PricingBanner from '../../component/PricingBanner/PricingBanner';
 import PricingCard from '../../component/PricingCard/PricingCard';
 
-export default function Pricing() {
+export default function Pricing({ setSubscriptionType }) {
   const img = 'https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1';
 
   function handleClick(pass){
 
     if(confirm(`Are you sure you want to get ${pass} ?`)){
-      
+      setSubscriptionType(pass);
     }
 
   }

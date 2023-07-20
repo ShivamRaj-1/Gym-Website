@@ -8,16 +8,18 @@ import Pricing from "./pages/Pricing/Pricing";
 import ContactUs from "./pages/Contact/ContactUs";
 import Signup from "./pages/Signup/SignUp";
 import SignIn from './pages/SignIn/SignIn';
+import { useState } from "react";
 
 function App() {
+  const [subscriptionType, setSubscriptionType] = useState("Regular");
   return (
     <>
-      <Navbar />
+      <Navbar subscriptionType={subscriptionType} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/trainer" element={<Trainer />} />
-        <Route path="/pricing" element={<Pricing />} />
+        <Route path="/pricing" element={<Pricing setSubscriptionType={setSubscriptionType}/>} />
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/signin" element={<SignIn />} />
