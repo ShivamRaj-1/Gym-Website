@@ -20,8 +20,8 @@ export default function Footer() {
           <hr></hr>
           <h4>Best Fitness club</h4>
           <div className={Styles.content}>
-            <p>Lorem ipsum dolor sit amet</p>
-            <p>consectetuer adipiscing elit</p>
+            <p>Fitness Trainer Cidco Rd</p>
+            <p>Kirti Housing Society</p>
           </div>
           <div className={Styles.footer_box_social}>
             <div className={Styles.footer_social}>
