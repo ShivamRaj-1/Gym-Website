@@ -3,6 +3,7 @@ import PS from './Pricing.module.css'
 import Background from '../../component/Background/Background'
 import PricingBanner from '../../component/PricingBanner/PricingBanner';
 import PricingCard from '../../component/PricingCard/PricingCard';
+import axios from 'axios';
 
 export default function Pricing({ setSubscriptionType }) {
   const img = 'https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1';
@@ -11,7 +12,22 @@ export default function Pricing({ setSubscriptionType }) {
 
     if(confirm(`Are you sure you want to get ${pass} ?`)){
       setSubscriptionType(pass);
+
+      //getting data from local storage
+      const input = JSON.parse(localStorage.getItem('loggedInUser'))
+
+      input.subscription = pass 
+      delete input.pass_date 
+
+      //sending data to db
+      axios
+        .put("http://localhost:80/newuser/user/edit", input)
+        .then(function (response) {
+          console.log(response.data);
+        });
     }
+    
+    location.reload();
 
   }
 

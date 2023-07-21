@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import styles from "./Signin.module.css";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { Rerender } from "../../Recoil/Atom";
+import { useRecoilState } from "recoil";
 
 export default function SignIn() {
   const [userList, setUserList] = useState([]);
@@ -10,6 +12,7 @@ export default function SignIn() {
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
   const nav = useNavigate();
+  const [rerender, setRerender] = useRecoilState(Rerender)
 
   useEffect(() => {
     axios
@@ -64,6 +67,7 @@ export default function SignIn() {
         localStorage.setItem("loggedInUser", JSON.stringify(foundUser));
         alert("You have successfully signed in.");
         nav("/");
+        setRerender(!rerender)
       } else {
         alert("Incorrect email or password.");
       }
