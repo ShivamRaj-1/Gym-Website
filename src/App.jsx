@@ -9,6 +9,7 @@ import ContactUs from "./pages/Contact/ContactUs";
 import Signup from "./pages/Signup/SignUp";
 import SignIn from "./pages/SignIn/SignIn";
 import { useState } from "react";
+import PaymentPage from "./pages/payment/PaymentPage";
 
 function App() {
   const [subscriptionType, setSubscriptionType] = useState("Regular");
@@ -23,6 +24,8 @@ function App() {
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/signin" element={<SignIn />} />
+        <Route path="/payment/1month" element={<PaymentPage pass={'1month'}/>} />
+        <Route path="/payment/3month" element={<PaymentPage pass={'3month'}/>} />
         <Route path="/*" element={<h1>404: Page Not found</h1>} />
       </Routes>
       <Footer />

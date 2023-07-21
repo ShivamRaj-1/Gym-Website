@@ -4,10 +4,13 @@ import Background from "../../component/Background/Background";
 import PricingBanner from "../../component/PricingBanner/PricingBanner";
 import PricingCard from "../../component/PricingCard/PricingCard";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { Rerender } from "../../Recoil/Atom";
+import { useRecoilState } from "recoil";
 
 export default function Pricing({ setSubscriptionType }) {
   const navigate = useNavigate();
+  const [rerender, setRerender] = useRecoilState(Rerender);
 
   const img =
     "https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1";
@@ -18,7 +21,11 @@ export default function Pricing({ setSubscriptionType }) {
       navigate("/signin");
     }
   }, [navigate]);
-  
+
+  useEffect(()=>{
+    setRerender(!rerender)
+  },[])
+
   function handleClick(pass) {
     if (confirm(`Are you sure you want to get ${pass} ?`)) {
       setSubscriptionType(pass);
@@ -35,10 +42,21 @@ export default function Pricing({ setSubscriptionType }) {
         .then(function (response) {
           console.log(response.data);
         });
+
+      if (pass === '1 Month Pass')
+        navigate('/payment/1month')
+      else if (pass === '3 Month Pass')
+        navigate('/payment/3month')
     }
 
-    location.reload();
+
+
+    // location.reload();
   }
+    // location.reload();
+
+    // setRerender(!rerender)
+
 
   return (
     <>
@@ -56,9 +74,11 @@ export default function Pricing({ setSubscriptionType }) {
               <p>-- 1 Month Pass</p>
               <p>-- Free Gym Access</p>
               <p>-- 24 Hour Access</p>
+              {/* <Link to='/payment/1month'> */}
               <button onClick={() => handleClick("1 Month Pass")}>
                 GET STARTED
               </button>
+              {/* </Link> */}
             </div>
             <div className={`${PS.pass_box} ${PS.right_box}`}>
               <div>
@@ -71,9 +91,11 @@ export default function Pricing({ setSubscriptionType }) {
               <p>-- Free Gym Access</p>
               <p>-- 1 Group Class Included</p>
               <p>-- 24 Hour Access</p>
+              {/* <Link to='/payment/3month'> */}
               <button onClick={() => handleClick("3 Month Pass")}>
                 GET STARTED
               </button>
+              {/* </Link> */}
             </div>
           </div>
           <div className={PS.content_part}>

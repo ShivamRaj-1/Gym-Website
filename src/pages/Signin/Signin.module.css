@@ -27,8 +27,8 @@
   font-size: 20px;
 }
 
-input[type="email"],
-input[type="password"] {
+.inputDiv input[type="email"],
+.inputDiv input[type="password"] {
   padding: 12px;
   margin-bottom: 10px;
   border: none;
@@ -39,7 +39,7 @@ input[type="password"] {
   text-align: center;
 }
 
-input[type="email"] {
+.inputDiv input[type="email"] {
   margin-right: 10px;
 }
 

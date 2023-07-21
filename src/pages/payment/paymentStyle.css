@@ -1,0 +1,118 @@
+ .App {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .payment-page {
+    max-width: 900px;
+    margin: 0 auto;
+    margin: 100px auto;
+  }
+  
+  .payment-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .payment-form {
+    flex: 1;
+    text-align: left;
+    padding: 20px;
+    background-color: #f2f2f2;
+  }
+  
+  .payment-form h2 {
+    margin-bottom: 20px;
+  }
+  
+  .payment-form label,
+  .payment-form input {
+    display: block;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+  
+  .expiration-cvv {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .payment-summary {
+    flex: 1;
+    text-align: left;
+    padding: 20px;
+    background-color: #f9f9f9;
+  }
+  
+  .payment-summary h2 {
+    margin-bottom: 20px;
+  }
+  
+  .plan {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .check-icon {
+    margin-right: 10px;
+    color: green;
+  }
+  
+  .total {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+  }
+  .payment-method{
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  .payment-method > svg{
+    width: 15%;
+    height: 4vh;
+    cursor: pointer;
+  }
+  .payment-method > svg:hover{
+    padding: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+  .sub_btn{
+    padding: 8px 15px;
+    margin-top: 1rem;
+    outline: none;
+    border: none;
+    background-color: rgb(56, 199, 56);
+    color: black;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  .sub_btn:hover{
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
+    background-color: green;
+  }
+  /* Responsive styles */
+  @media screen and (min-width: 600px) {
+    .payment-container {
+      flex-direction: row;
+    }
+  
+    .payment-form {
+      margin-right: 20px;
+    }
+  }
+  
+  @media screen and (max-width: 400px) {
+    .expiration-cvv {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  
+    .expiration-cvv input {
+      width: 45%;
+    }
+  }
