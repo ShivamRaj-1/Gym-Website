@@ -9,7 +9,7 @@ export default function TrainerMain({ show }) {
       <div className={TMS.trainer_container}>
         <div className={TMS.heading_part}>
           <h1>Meet <span>Our</span> Team </h1>
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum eius voluptatibus quo dignissimos quis voluptates, commodi culpa neque. Numquam dolor eos et fugiat, repellendus sint temporibus incidunt ullam nisi odio!</p>
+          <p>Powered by a transformative bussiness model,propretary technology,tried and tested methodology,and tested methodology ,and some of the best fitness industry brains in the world .we,ve rewritten the rules and changed the game</p>
         </div>
         <div className={TMS.card_container}>
           <TrainerCard />

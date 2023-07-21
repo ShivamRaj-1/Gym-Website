@@ -50,7 +50,7 @@ export default function Pricing({ setSubscriptionType }) {
           <div className={PS.content_part}>
             <h4><span>Member</span>ship</h4>
             <h2>From Punch Pass to Monthly or Annual</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam aliquam odio est molestiae dolores quis maxime quae consequuntur deleniti amet excepturi sequi obcaecati unde iure, culpa corporis error eos iste?</p>
+            <p>At Fitness Trainer, we are committed to providing flexible and convenient membership options to cater to your fitness needs. Whether you're a seasoned gym enthusiast or just getting started on your fitness journey, we have the perfect plan for you.</p>
             <h3>Each Plan included</h3>
             <ul>
               <li><span>--</span> The best equipment global brand</li>

@@ -17,7 +17,7 @@ export default function TrainerBanner(props) {
             <div>
                 <h1> {props.h1} </h1>
                 <h1> {props.h2} </h1>
-                <Link to={'/signin'}><Button name= 'JOIN NOW'/></Link>
+                <Link to={'/about'}><Button name= 'JOIN NOW'/></Link>
             </div>
         </section>
     )

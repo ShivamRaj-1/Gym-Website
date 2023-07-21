@@ -11,22 +11,22 @@ export default function Trainer() {
     {
       img: 'https://preview.colorlib.com/theme/gym2/img/svg_icon/1.svg',
       heading: 'Weightlifting',
-      description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, vel?',
+      description: 'Weightlifting is a challenging and empowering sport that builds both physical strength and mental resilience.',
     },
     {
       img: 'https://preview.colorlib.com/theme/gym2/img/svg_icon/2.svg',
       heading: 'Specific Muscles',
-      description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, vel?',
+      description: 'Specific muscles refer to individual muscles in the body that play a crucial role in various movements and functions, contributing to overall strength, stability, and mobility.',
     },
     {
       img: 'https://preview.colorlib.com/theme/gym2/img/svg_icon/3.svg',
       heading: 'Flex Your Muscles',
-      description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, vel?',
+      description: '"Flex your muscles" is an idiomatic expression encouraging someone to demonstrate their strength, skills, or capabilities confidently.',
     },
     {
       img: 'https://preview.colorlib.com/theme/gym2/img/svg_icon/4.svg',
       heading: 'Cardio Exercises',
-      description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, vel?',
+      description: 'Cardio exercises, also known as cardiovascular exercises, are activities that elevate the heart rate and improve cardiovascular fitness, leading to enhanced endurance and overall health.',
     },
   ]
   return (
