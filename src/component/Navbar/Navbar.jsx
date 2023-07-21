@@ -14,18 +14,18 @@ import { Rerender } from "../../Recoil/Atom";
 import { useRecoilState } from "recoil";
 
 export default function Navbar({ subscriptionType }) {
-
-  const [user, setUser] = useState('')
-  const [rerender, setRerender] = useRecoilState(Rerender)
+  const [user, setUser] = useState("");
+  const [rerender, setRerender] = useRecoilState(Rerender);
 
   useEffect(() => {
     axios
       .get("http://localhost:80/newuser/user/save")
       .then(function (response) {
+        const email = JSON.parse(localStorage.getItem("loggedInUser")).email;
+        const password = JSON.parse(
+          localStorage.getItem("loggedInUser")
+        ).password;
 
-        const email = JSON.parse(localStorage.getItem('loggedInUser')).email;
-        const password = JSON.parse(localStorage.getItem('loggedInUser')).password;
-  
         const foundUser = response.data.find(
           (user) => user.email === email && user.password === password
         );
@@ -35,9 +35,8 @@ export default function Navbar({ subscriptionType }) {
       .catch(function (error) {
         console.log(error);
       });
-
   }, [rerender]);
-    
+
   const [menu, setMenu] = useState(false);
   const navigate = useNavigate();
 
@@ -108,7 +107,9 @@ export default function Navbar({ subscriptionType }) {
                       horizontal: "center",
                     }}
                   >
-                    <Typography sx={{ p: 2 }}>{user.subscription ? user.subscription : subscriptionType}</Typography>
+                    <Typography sx={{ p: 2 }}>
+                      {user.subscription ? user.subscription : subscriptionType}
+                    </Typography>
                     <hr />
                     <Typography sx={{ p: 2 }} onClick={handleLogout}>
                       Logout
@@ -176,7 +177,9 @@ export default function Navbar({ subscriptionType }) {
                         }}
                       >
                         <Typography sx={{ p: 2 }}>Profile</Typography>
-                        <Typography sx={{ p: 2 }}>{user.subscription || subscriptionType}</Typography>
+                        <Typography sx={{ p: 2 }}>
+                          {user.subscription || subscriptionType}
+                        </Typography>
                         <hr />
                         <Typography sx={{ p: 2 }} onClick={handleLogout}>
                           Logout

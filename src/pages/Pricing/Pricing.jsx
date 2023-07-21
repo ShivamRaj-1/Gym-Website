@@ -1,23 +1,33 @@
-import React from 'react'
-import PS from './Pricing.module.css'
-import Background from '../../component/Background/Background'
-import PricingBanner from '../../component/PricingBanner/PricingBanner';
-import PricingCard from '../../component/PricingCard/PricingCard';
-import axios from 'axios';
+import React, { useEffect } from "react";
+import PS from "./Pricing.module.css";
+import Background from "../../component/Background/Background";
+import PricingBanner from "../../component/PricingBanner/PricingBanner";
+import PricingCard from "../../component/PricingCard/PricingCard";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export default function Pricing({ setSubscriptionType }) {
-  const img = 'https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1';
+  const navigate = useNavigate();
 
-  function handleClick(pass){
+  const img =
+    "https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1";
 
-    if(confirm(`Are you sure you want to get ${pass} ?`)){
+  useEffect(() => {
+    const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+    if (!loggedInUser) {
+      navigate("/signin");
+    }
+  }, [navigate]);
+  
+  function handleClick(pass) {
+    if (confirm(`Are you sure you want to get ${pass} ?`)) {
       setSubscriptionType(pass);
 
       //getting data from local storage
-      const input = JSON.parse(localStorage.getItem('loggedInUser'))
+      const input = JSON.parse(localStorage.getItem("loggedInUser"));
 
-      input.subscription = pass 
-      delete input.pass_date 
+      input.subscription = pass;
+      delete input.pass_date;
 
       //sending data to db
       axios
@@ -26,14 +36,13 @@ export default function Pricing({ setSubscriptionType }) {
           console.log(response.data);
         });
     }
-    
-    location.reload();
 
+    location.reload();
   }
 
   return (
-    <> 
-      <Background heading='OUR PRICING' imgUrl={img} />
+    <>
+      <Background heading="OUR PRICING" imgUrl={img} />
       <section className={PS.pricing_mainBackground}>
         <div className={PS.pricing_container}>
           <div className={PS.pass_part}>
@@ -47,7 +56,9 @@ export default function Pricing({ setSubscriptionType }) {
               <p>-- 1 Month Pass</p>
               <p>-- Free Gym Access</p>
               <p>-- 24 Hour Access</p>
-              <button onClick={()=> handleClick("1 Month Pass")}>GET STARTED</button>
+              <button onClick={() => handleClick("1 Month Pass")}>
+                GET STARTED
+              </button>
             </div>
             <div className={`${PS.pass_box} ${PS.right_box}`}>
               <div>
@@ -60,20 +71,40 @@ export default function Pricing({ setSubscriptionType }) {
               <p>-- Free Gym Access</p>
               <p>-- 1 Group Class Included</p>
               <p>-- 24 Hour Access</p>
-              <button onClick={()=> handleClick("3 Month Pass")}>GET STARTED</button>
+              <button onClick={() => handleClick("3 Month Pass")}>
+                GET STARTED
+              </button>
             </div>
           </div>
           <div className={PS.content_part}>
-            <h4><span>Member</span>ship</h4>
+            <h4>
+              <span>Member</span>ship
+            </h4>
             <h2>From Punch Pass to Monthly or Annual</h2>
-            <p>At Fitness Trainer, we are committed to providing flexible and convenient membership options to cater to your fitness needs. Whether you're a seasoned gym enthusiast or just getting started on your fitness journey, we have the perfect plan for you.</p>
+            <p>
+              At Fitness Trainer, we are committed to providing flexible and
+              convenient membership options to cater to your fitness needs.
+              Whether you're a seasoned gym enthusiast or just getting started
+              on your fitness journey, we have the perfect plan for you.
+            </p>
             <h3>Each Plan included</h3>
             <ul>
-              <li><span>--</span> The best equipment global brand</li>
-              <li><span>--</span> The gym is open 24 hours a day, 7 days a week</li>
-              <li><span>--</span> Two safe payment methods</li>
-              <li><span>--</span> Group fitness classes in the price of the subscription</li>
-              <li><span>--</span> No long-term contract, period</li>
+              <li>
+                <span>--</span> The best equipment global brand
+              </li>
+              <li>
+                <span>--</span> The gym is open 24 hours a day, 7 days a week
+              </li>
+              <li>
+                <span>--</span> Two safe payment methods
+              </li>
+              <li>
+                <span>--</span> Group fitness classes in the price of the
+                subscription
+              </li>
+              <li>
+                <span>--</span> No long-term contract, period
+              </li>
             </ul>
           </div>
         </div>
@@ -89,5 +120,5 @@ export default function Pricing({ setSubscriptionType }) {
         </div>
       </section>
     </>
-  )
+  );
 }
