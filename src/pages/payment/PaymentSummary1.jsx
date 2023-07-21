@@ -1,6 +1,7 @@
 import React from "react";
 import { FaCheck } from "react-icons/fa";
 import './paymentStyle.css'
+import qr from './qrcode.png'
 
 const PaymentSummary1 = () => {
   return (
@@ -14,7 +15,7 @@ const PaymentSummary1 = () => {
         <span>Total:</span>
         <span>₹1000</span>
       </div>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/QR_code_for_mobile_English_Wikipedia.svg/220px-QR_code_for_mobile_English_Wikipedia.svg.png" alt=""/>
+      <img src={qr} style={{width:"15rem"}} alt="qr code"/>
     </div>
   );
 };

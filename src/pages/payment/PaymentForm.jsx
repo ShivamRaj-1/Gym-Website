@@ -1,26 +1,17 @@
-import React from 'react';
-import { FaAmazonPay, FaApplePay, FaGooglePay } from 'react-icons/fa';
-import { GrPaypal } from 'react-icons/gr';
-import { SiPaytm } from 'react-icons/si';
-import { MdPayment } from 'react-icons/md';
-import './paymentStyle.css'
-import { useNavigate } from 'react-router-dom';
-import { Rerender } from "../../Recoil/Atom";
-import { useRecoilState } from "recoil";
+import React from "react";
+import { FaAmazonPay, FaApplePay, FaGooglePay } from "react-icons/fa";
+import { GrPaypal } from "react-icons/gr";
+import { SiPaytm } from "react-icons/si";
+import { MdPayment } from "react-icons/md";
+import "./paymentStyle.css";
+import { useNavigate } from "react-router-dom";
 
 const PaymentForm = () => {
+  const navigate = useNavigate();
 
-  const navigate = useNavigate()
-  const [rerender, setRerender] = useRecoilState(Rerender);
-
-  function handlePay(){
-    
-    
-
-    alert('Payment Successful. Enjoy your membership with us.')
-    // setRerender(!rerender)
-    navigate('/pricing')
-
+  function handlePay() {
+    alert("Payment Successful. Enjoy your membership with us.");
+    navigate("/pricing");
   }
 
   return (
@@ -49,7 +40,9 @@ const PaymentForm = () => {
             <input type="password" id="cvv" required />
           </div>
         </div>
-        <button type="submit" className="sub_btn" >Submit Payment</button>
+        <button type="submit" className="sub_btn">
+          Submit Payment
+        </button>
       </form>
     </div>
   );
