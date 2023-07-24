@@ -21,16 +21,17 @@ export default function Navbar({ subscriptionType }) {
     axios
       .get("http://localhost:80/newuser/user/save")
       .then(function (response) {
-        const email = JSON.parse(localStorage.getItem("loggedInUser")).email;
-        const password = JSON.parse(
-          localStorage.getItem("loggedInUser")
-        ).password;
+        const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+        if (loggedInUser) {
+          const email = loggedInUser.email;
+          const password = loggedInUser.password;
 
-        const foundUser = response.data.find(
-          (user) => user.email === email && user.password === password
-        );
+          const foundUser = response.data.find(
+            (user) => user.email === email && user.password === password
+          );
 
-        setUser(foundUser);
+          setUser(foundUser);
+        }
       })
       .catch(function (error) {
         console.log(error);

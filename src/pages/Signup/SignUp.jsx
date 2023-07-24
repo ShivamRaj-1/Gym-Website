@@ -97,6 +97,7 @@ export default function SignUpPage() {
               name="password"
               placeholder="Enter your password"
               value={password}
+              autoComplete="current-password"
               onChange={(e) => setPassword(e.target.value)}
             />
             <br />

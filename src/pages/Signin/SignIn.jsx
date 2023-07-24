@@ -85,6 +85,7 @@ export default function SignIn() {
               type="email"
               value={email}
               placeholder="Enter your email"
+              autoComplete="username"
               onChange={(e) => setEmail(e.target.value)}
             />
             {emailError && <div className={styles.error}>{emailError}</div>}
@@ -95,6 +96,7 @@ export default function SignIn() {
               value={password}
               className={styles.passwordInput}
               placeholder="Enter your password"
+              autoComplete="current-password"
               onChange={(e) => setPassword(e.target.value)}
             />
             {passwordError && (
