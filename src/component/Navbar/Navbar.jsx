@@ -176,7 +176,6 @@ export default function Navbar({ subscriptionType }) {
                           horizontal: "center",
                         }}
                       >
-                        <Typography sx={{ p: 2 }}>Profile</Typography>
                         <Typography sx={{ p: 2 }}>
                           {user.subscription || subscriptionType}
                         </Typography>

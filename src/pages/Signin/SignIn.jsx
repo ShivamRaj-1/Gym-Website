@@ -18,7 +18,7 @@ export default function SignIn() {
     axios
       .get("http://localhost:80/newuser/user/save")
       .then(function (response) {
-        console.log(response.data);
+        // console.log(response.data);
         setUserList(response.data);
       })
       .catch(function (error) {
